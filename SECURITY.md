@@ -70,3 +70,22 @@ This section is intended for SciCat developers responding to a new security advi
 7. Facilities update to the new release or master branch.
 8. The next scicat operator meeting should include a retrospective analyzing the
    incident response.
+
+
+The private fork after development should look something like this:
+
+```mermaid
+gitGraph
+   commit id: "5.2.0-feature"
+   branch release
+   commit id: "5.2.0" tag: "v5.2.0"
+   checkout main
+   commit id: "5.3.0-feature"
+   commit id: "advisory-fix-1"
+
+   checkout release
+   cherry-pick id: "advisory-fix-1" tag:"v5.2.1"
+```
+
+Alternately, it may be easier to develop the fix on `release` and then merge it back
+into `main`. Both should produce the same result.
