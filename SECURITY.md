@@ -4,6 +4,10 @@ The SciCat project takes security seriously. This file documents the general sec
 procedures for SciCatProject repositories. Individual repositories may have additional
 information in their own `SECURITY.md` files.
 
+SciCat is a community-driven, volunteer-maintained open source project. There is no commercial entity operating SciCat, no dedicated security team, and no service-level agreement (SLA) attached to this policy. Response times described below are best-effort targets, not guarantees.
+
+This document describes how the SciCat developers and steering committee handle the discovery, triage, and disclosure of security issues in the upstream project — it does not cover the operational security of any individual deployment.
+
 ## Reporting a Vulnerability
 
 If you believe you have found a security vulnerability in SciCat, please report it
@@ -24,9 +28,25 @@ Please include as much information as you can to help us better understand and r
 the issue. We will work on fixing the issues
 [privately](https://docs.github.com/en/code-security/security-advisories/working-with-repository-security-advisories/collaborating-in-a-temporary-private-fork-to-resolve-a-repository-security-vulnerability).
 
+
+## Severity Classification
+
+We classify reported issues into three severity levels. Classification is judgment-based and considers exploitability, impact (data exposure, integrity, availability), and whether exploitation requires privileged access.
+
+### Low Severity
+Issues with minimal practical impact — for example, issues requiring unusual local access, exposing non-sensitive information, or requiring significant, unlikely preconditions to exploit.
+
+### Medium Severity
+Issues that could lead to limited unauthorized access, data exposure, or disruption under realistic conditions, but that are constrained in scope (e.g., affecting a single component, requiring authentication, or needing specific configurations to be exploitable).
+
+### High Severity
+Issues that could lead to significant unauthorized access, data loss/exposure, remote code execution, authentication/authorization bypass, or broad service disruption, and that are exploitable under common or default configurations.
+
+Severity is assessed by the maintainers/steering committee and may be revised as more information becomes available.
+
 ## Disclosure
 
-Serious vulnerabilities are announced confidentially to cybersecurity personal and
+Medium and High vulnerabilities are announced confidentially to cybersecurity personal and
 select SciCat operators ahead of the public disclosure to allow organizations time to
 patch public systems. Please [contact the project
 leaders](mailto:scicat-leaders@lists.psi.ch) if you would like to be notified about
@@ -36,11 +56,12 @@ We use GitHub [security
 advisories](https://github.com/SciCatProject/scicat-backend-next/security/advisories) to
 disclose vulnerabilities publicly after a fix is available.
 
+
 ## Responding to a vulnerability
 
 This section is intended for SciCat developers responding to a new security advisory.
 
-1. Project Leaders (PL) will triage the vulnerability and assign developers to start
+1. Project Leaders (PL) will triage the severity of the vulnerability and assign developers to start
    working on a fix.
    1. Create a private security advisory, if the reporter did not already.
    2. Grant the team `@SciCatProject/security` access to the advisory
@@ -89,3 +110,13 @@ gitGraph
 
 Alternately, it may be easier to develop the fix on `release` and then merge it back
 into `main`. Both should produce the same result.
+
+### Target Response Times (Best Effort)
+
+| Severity | Initial Acknowledgment | Steering Committee Notification | Target Fix & Public Release |
+|----------|------------------------|----------------------------------|------------------------------|
+| High     | 1–3 business days      | As soon as confirmed             | As soon as practical; expedited effort from available maintainers |
+| Medium   | Up to 5 business days  | Within the same window as confirmation | Next reasonable release cycle, or sooner if maintainer capacity allows |
+| Low      | Up to 5 business days  | Included in routine steering committee updates | Bundled into a regular release |
+
+These timeframes reflect a volunteer effort and depend on maintainer availability. There is no contractual or business-criticality obligation behind them.
