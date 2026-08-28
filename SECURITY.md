@@ -120,3 +120,18 @@ into `main`. Both should produce the same result.
 | Low      | Up to 5 business days  | Included in routine steering committee updates | Bundled into a regular release |
 
 These timeframes reflect a volunteer effort and depend on maintainer availability. There is no contractual or business-criticality obligation behind them.
+
+## Supported Versions
+
+| Version | Supported ||---------|-----------|
+| latest  | ✅ |
+| LTS | ✅ |
+| v3.x | not supported |
+
+## Scope
+This policy covers the SciCat core codebase and components maintained under the SciCat GitHub organization. It does not cover:
+- Vulnerabilities in third-party dependencies (please report these upstream, though letting us know is appreciated so we can track and update)
+- The security configuration or operation of any specific institutional deployment of SciCat
+
+## Questions
+For anything not covered here, reach out via the SciCat Slack Channel.
