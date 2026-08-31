@@ -123,8 +123,10 @@ These timeframes reflect a volunteer effort and depend on maintainer availabilit
 
 ## Supported Versions
 
-| Version | Supported ||---------|-----------|
-| latest  | ✅ |
+| Version | Supported |
+|---------|-----------|
+| main branch  | ✅ |
+| latest release  | ✅ |
 | LTS | ✅ |
 | v3.x | not supported |
 
